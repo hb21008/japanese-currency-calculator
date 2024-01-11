@@ -7,9 +7,11 @@ window.onload = function() {
         div.className = 'currency-row';
         div.innerHTML = `
             <span>${currency}</span>
-            <button onclick="updateCurrency('${currency}', -1)">-1</button>
+            <button onclick="updateCurrency('${currency}', -10)" class="large">-</button>
+            <button onclick="updateCurrency('${currency}', -1)">-</button>
             <input type="number" id="${currency}" value="0" min="0" onchange="updateTotal()">
-            <button onclick="updateCurrency('${currency}', 1)">+1</button>
+            <button onclick="updateCurrency('${currency}', 1)">+</button>
+            <button onclick="updateCurrency('${currency}', 10)" class="large">+</button>
         `;
         container.appendChild(div);
     }
@@ -32,22 +34,6 @@ function updateCurrency(currency, change) {
 }
 
 function updateTotal() {
-    let total = 0;
-    for (const [currency, value] of Object.entries(currencies)) {
-        const field = document.getElementById(currency);
-        total += parseInt(field.value) * value;
-    }
-    document.getElementById('total').innerText = `合計金額: ${total}円`;
-}
-
-function reset() {
-    for (const currency of Object.keys(currencies)) {
-        document.getElementById(currency).value = 0;
-    }
-    updateTotal();
-}
-
-function updateTotal() {
     let grandTotal = 0;
     for (const [currency, value] of Object.entries(currencies)) {
         const field = document.getElementById(currency);
@@ -56,4 +42,11 @@ function updateTotal() {
         document.getElementById(`total-${currency}`).innerText = `${total}円`;
     }
     document.getElementById('total').innerText = `合計金額: ${grandTotal}円`;
+}
+
+function reset() {
+    for (const currency of Object.keys(currencies)) {
+        document.getElementById(currency).value = 0;
+    }
+    updateTotal();
 }
