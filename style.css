@@ -1,6 +1,7 @@
 /* スマートフォン向けの基本スタイル */
 @media (max-width: 600px) {
     body {
+        height: auto;
         font-size: 14px; /* フォントサイズの調整 */
     }
 
@@ -35,7 +36,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
     background-color: #f4f4f4;
 }
 
