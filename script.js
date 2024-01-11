@@ -13,6 +13,14 @@ window.onload = function() {
         `;
         container.appendChild(div);
     }
+
+    const totalsContainer = document.getElementById('currency-totals');
+    for (const currency of Object.keys(currencies)) {
+        const div = document.createElement('div');
+        div.className = 'currency-total';
+        div.innerHTML = `<span>${currency} 合計: </span><span id="total-${currency}">0円</span>`;
+        totalsContainer.appendChild(div);
+    }
 };
 
 function updateCurrency(currency, change) {
@@ -37,4 +45,15 @@ function reset() {
         document.getElementById(currency).value = 0;
     }
     updateTotal();
+}
+
+function updateTotal() {
+    let grandTotal = 0;
+    for (const [currency, value] of Object.entries(currencies)) {
+        const field = document.getElementById(currency);
+        const total = parseInt(field.value) * value;
+        grandTotal += total;
+        document.getElementById(`total-${currency}`).innerText = `${total}円`;
+    }
+    document.getElementById('total').innerText = `合計金額: ${grandTotal}円`;
 }
