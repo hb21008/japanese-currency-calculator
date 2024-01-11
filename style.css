@@ -2,29 +2,40 @@
 @media (max-width: 600px) {
     body {
         height: auto;
-        font-size: 14px; /* フォントサイズの調整 */
+        font-size: 14px;
+        /* フォントサイズの調整 */
     }
 
     .container {
-        width: 100%; /* コンテナの幅を広げる */
-        padding: 10px; /* コンテナのパディングを調整 */
+        width: 100%;
+        /* コンテナの幅を広げる */
+        padding: 10px;
+        /* コンテナのパディングを調整 */
     }
 
-    .currency-row span, .currency-row button, .currency-row input {
-        font-size: 14px; /* フォントサイズの調整 */
+    .currency-row span,
+    .currency-row button,
+    .currency-row input {
+        font-size: 14px;
+        /* フォントサイズの調整 */
     }
 
     button {
-        padding: 10px 12px; /* ボタンのパディングを調整 */
-        font-size: 14px; /* ボタンのフォントサイズを調整 */
+        padding: 10px 12px;
+        /* ボタンのパディングを調整 */
+        font-size: 14px;
+        /* ボタンのフォントサイズを調整 */
     }
 
     input[type="number"] {
-        padding: 10px; /* 入力フィールドのパディングを調整 */
+        padding: 10px;
+        /* 入力フィールドのパディングを調整 */
     }
 
-    .currency-total, .currency-row {
-        margin: 5px 0; /* マージンの調整 */
+    .currency-total,
+    .currency-row {
+        margin: 5px 0;
+        /* マージンの調整 */
     }
 }
 
@@ -58,9 +69,11 @@ body {
 
 .currency-row span {
     display: inline-block;
-    width: 70px; /* 適切な幅に調整してください */
+    width: 70px;
+    /* 適切な幅に調整してください */
     text-align: right;
-    margin-right: 10px; /* ボタンとの間隔 */
+    margin-right: 10px;
+    /* ボタンとの間隔 */
 }
 
 
@@ -68,23 +81,32 @@ body {
 /* 他のボタンのスタイル */
 button {
     cursor: pointer;
-    padding: 6px; /* ボタンのサイズを小さく調整 */
-    border-radius: 20%; /* 真円にする */
-    background-color: transparent; /* 背景を透明に */
-    border: 2px solid #007bff; /* 枠線の追加 */
+    padding: 6px;
+    /* ボタンのサイズを小さく調整 */
+    border-radius: 20%;
+    /* 真円にする */
+    background-color: transparent;
+    /* 背景を透明に */
+    border: 2px solid #007bff;
+    /* 枠線の追加 */
     color: #007bff;
     font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s; /* アニメーションの追加 */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* アニメーションの追加 */
 }
 
 button:active {
-    transform: scale(1.1); /* ボタンを少し大きくする */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* より強い光るエフェクト */
+    transform: scale(1.1);
+    /* ボタンを少し大きくする */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+    /* より強い光るエフェクト */
 }
 
 button.large {
-    font-weight: bold; /* フォントを太く */
-    padding: 8px; /* サイズを少し大きく */
+    font-weight: bold;
+    /* フォントを太く */
+    padding: 8px;
+    /* サイズを少し大きく */
 }
 
 /* リセットボタンのスタイル */
@@ -111,7 +133,8 @@ input[type="number"] {
     border: 1px solid #ddd;
 }
 
-.currency-row, .currency-total {
+.currency-row,
+.currency-total {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -123,13 +146,32 @@ input[type="number"] {
     color: #555;
     border-top: 1px solid #ddd;
     padding-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
 }
 
-.currency-row span, .currency-row button, .currency-row input {
+.currency-total span:first-child {
+    width: 100px;
+    /* Adjust this value based on your needs */
+    text-align: right;
+}
+
+.currency-total span:last-child {
+    /* widthを可変に */
+    width: 50%;
+    /* Adjust this value based on your needs */
+    text-align: right;
+}
+
+.currency-row span,
+.currency-row button,
+.currency-row input {
     display: inline-block;
     vertical-align: middle;
 }
 
-.currency-row button, .currency-row input {
+.currency-row button,
+.currency-row input {
     margin: 0 2px;
 }
