@@ -1,5 +1,48 @@
-/* 基本スタイル */
+/* スマートフォン向けの基本スタイル */
+@media (max-width: 600px) {
+    body {
+        height: auto;
+        font-size: 14px;
+        /* フォントサイズの調整 */
+    }
+
+    .container {
+        width: 100%;
+        /* コンテナの幅を広げる */
+        padding: 10px;
+        /* コンテナのパディングを調整 */
+    }
+
+    .currency-row span,
+    .currency-row button,
+    .currency-row input {
+        font-size: 14px;
+        /* フォントサイズの調整 */
+    }
+
+    button {
+        padding: 10px 12px;
+        /* ボタンのパディングを調整 */
+        font-size: 14px;
+        /* ボタンのフォントサイズを調整 */
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        /* 入力フィールドのパディングを調整 */
+    }
+
+    .currency-total,
+    .currency-row {
+        margin: 5px 0;
+        /* マージンの調整 */
+    }
+}
+
+/* 基本のスタイル　*/
 body {
+    /* ヒラギノフォントを使う */
+    /* ヒラギノフォントがない場合はArialを使う */
     font-family: "Hiragino Kaku Gothic Pro", "Arial", sans-serif;
     display: flex;
     justify-content: center;
@@ -16,51 +59,120 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* 共通スタイルのセレクタグループ化 */
-.currency-row, .currency-total {
+#currency-fields {
+    margin-bottom: 20px;
+}
+
+.currency-row {
+    margin: 10px 0;
+}
+
+.currency-row span {
+    display: inline-block;
+    width: 70px;
+    /* 適切な幅に調整してください */
+    text-align: right;
+    margin-right: 10px;
+    /* ボタンとの間隔 */
+}
+
+
+/* ボタンのスタイル変更 */
+/* 他のボタンのスタイル */
+button {
+    cursor: pointer;
+    padding: 6px;
+    /* ボタンのサイズを小さく調整 */
+    border-radius: 20%;
+    /* 真円にする */
+    background-color: transparent;
+    /* 背景を透明に */
+    border: 2px solid #007bff;
+    /* 枠線の追加 */
+    color: #007bff;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* アニメーションの追加 */
+}
+
+button:active {
+    transform: scale(1.1);
+    /* ボタンを少し大きくする */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+    /* より強い光るエフェクト */
+}
+
+button.large {
+    font-weight: bold;
+    /* フォントを太く */
+    padding: 8px;
+    /* サイズを少し大きく */
+}
+
+/* リセットボタンのスタイル */
+.reset-button {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.reset-button:hover {
+    background-color: #0056b3;
+}
+
+
+input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.currency-row,
+.currency-total {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 10px 0;
 }
 
-.currency-row span, 
-.currency-row button, 
-.currency-row input,
-button, 
-input[type="number"] {
-    font-size: 14px;
+.currency-total {
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
 }
 
-/* ボタンスタイル */
-button {
-    cursor: pointer;
-    padding: 6px;
-    border-radius: 20%;
-    background-color: transparent;
-    border: 2px solid #007bff;
-    color: #007bff;
-    font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s;
+.currency-total span:first-child {
+    width: 100px;
+    /* Adjust this value based on your needs */
+    text-align: right;
 }
 
-button:active {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+.currency-total span:last-child {
+    /* widthを可変に */
+    width: 50%;
+    /* Adjust this value based on your needs */
+    text-align: right;
 }
 
-/* レスポンシブデザイン */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container, .currency-row span, .currency-row button, .currency-row input, button, input[type="number"] {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .currency-total, .currency-row {
-        margin: 5px 0;
-    }
+.currency-row span,
+.currency-row button,
+.currency-row input {
+    display: inline-block;
+    vertical-align: middle;
 }
+
+.currency-row button,
+.currency-row input {
+    margin: 0 2px;
+}
+
